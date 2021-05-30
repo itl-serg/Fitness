@@ -1,0 +1,136 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+body {
+  @include textPrimary(400, 14px, 24px, $textColorPrimary);
+  @include media(">=768px") {
+    background: #fd634e;
+  }
+  @include media(">=991px") {
+    background: #a2ca28;
+  }
+}
+// Header
+.intro {
+  .img-holder {
+    // height: 890px;
+    overflow: hidden;
+    position: relative;
+    img {
+      display: block;
+      width: 100%;
+    }
+    .header-logo {
+      background: url(../images/logo.png) no-repeat;
+      position: absolute;
+      width: 151px;
+      height: 47px;
+      top: 39px;
+      left: 52px;
+    }
+    .header-text {
+      @include media("<768px") {
+        position: absolute;
+        bottom: 40px;
+        left: 52px;
+        text-transform: uppercase;
+        h1 {
+          @include textSecondary(400, 20px, 24px, $textColorPrimary);
+          span {
+            color: $colorGren;
+          }
+        }
+        h2 {
+          @include textSecondary(700, 15px, 24px, $textColorPrimary);
+          span {
+            color: $colorRed;
+          }
+          margin-left: 66px;
+        }
+      }
+      @include media(">=768px") {
+        position: absolute;
+        bottom: 90px;
+        left: 83px;
+        text-transform: uppercase;
+        h1 {
+          @include textSecondary(400, 40px, 48px, $textColorPrimary);
+          span {
+            color: $colorGren;
+          }
+        }
+        h2 {
+          @include textSecondary(700, 15px, 24px, $textColorPrimary);
+          span {
+            color: $colorRed;
+          }
+          margin-left: 116px;
+        }
+      }
+      @include media(">=991px") {
+        position: absolute;
+        bottom: 140px;
+        left: 114px;
+        text-transform: uppercase;
+        h1 {
+          @include textSecondary(400, 40px, 48px, $textColorPrimary);
+          span {
+            color: $colorGren;
+          }
+        }
+        h2 {
+          @include textSecondary(700, 15px, 24px, $textColorPrimary);
+          span {
+            color: $colorRed;
+          }
+          margin-left: 166px;
+        }
+      }
+    }
+  }
+  .header-nav {
+    .header-nav-list {
+      text-transform: uppercase;
+      @include media("<768px") {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        position: absolute;
+        top: 53px;
+        right: 40px;
+      }
+      @include media(">=768px") {
+        display: flex;
+        position: absolute;
+        top: 53px;
+        right: 40px;
+        li {
+          margin-left: 50px;
+        }
+      }
+      @include media(">=991px") {
+        display: flex;
+        position: absolute;
+        top: 53px;
+        right: 70px;
+        li {
+          margin-left: 67px;
+        }
+      }
+      li {
+        a {
+          text-decoration: none;
+          @include textSecondary(400, 13px, 20px, $textColorPrimary);
+        }
+      }
+    }
+  }
+}
