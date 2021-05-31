@@ -110,6 +110,24 @@ body {
 // Section
 .section-wrapper {
   background: $backgroundAtlantis;
+  .data:nth-child(odd) {
+    .data-content {
+      order: 1;
+    }
+    .data-img {
+      order: 2;
+    }
+  }
+  @include media(">=768px") {
+    .data:nth-child(odd) {
+      .data-content {
+        order: 2;
+      }
+      .data-img {
+        order: 1;
+      }
+    }
+  }
 }
 
 .data {
@@ -130,6 +148,30 @@ body {
     @include media(">=768") {
       padding: 50px 35px;
     }
+  }
+}
+.data-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  span {
+    text-transform: uppercase;
+    @include textSecondary(400, 14px, 20px, $colorPersimmon);
+  }
+  h2 {
+    text-transform: uppercase;
+    @include textSecondary(300, 35px, 40px, $colorAtlantis);
+  }
+  p {
+    color: $colorNevada;
+  }
+  a {
+    color: $colorAtlantis;
+  }
+  a:hover {
+    color: $colorPersimmon;
   }
 }
 .data-img {
