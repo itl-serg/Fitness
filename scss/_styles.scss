@@ -146,33 +146,52 @@ body {
 .data-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
   text-align: center;
   width: 401px;
   padding: 35px;
-  margin: auto;
+
   @include media(">=768") {
     padding: 50px 35px;
   }
-  span {
+  em {
     text-transform: uppercase;
     @include textSecondary(400, 14px, 20px, $colorPersimmon);
+    letter-spacing: 1.4px;
+    margin-top: 16px;
+    margin-bottom: 3px;
+    display: block;
   }
   h2 {
     text-transform: uppercase;
     @include textSecondary(300, 35px, 40px, $colorAtlantis);
+    letter-spacing: -2.5px;
+    margin-bottom: 16px;
   }
+  .data-content-icon {
+    background: url("../images/icons.png") no-repeat -3px 0;
+    width: 15px;
+    height: 23px;
+    margin-bottom: 18px;
+    display: block;
+  }
+
   p {
-    color: $colorNevada;
+    @include textPrimary(400, 14px, 26px, $colorNevada);
+    margin-bottom: 1px;
+    letter-spacing: 0.2px;
   }
   a {
+    display: block;
     color: $colorAtlantis;
   }
   a:hover {
     color: $colorPersimmon;
+    text-decoration: none;
   }
 }
+
 .data-img {
   height: 394px;
   overflow: hidden;
