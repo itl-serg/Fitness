@@ -142,13 +142,6 @@ body {
   @include media(">=1181px") {
     width: 1181px;
   }
-  .data-content {
-    width: 401px;
-    padding: 35px;
-    @include media(">=768") {
-      padding: 50px 35px;
-    }
-  }
 }
 .data-content {
   display: flex;
@@ -156,6 +149,12 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  width: 401px;
+  padding: 35px;
+  margin: auto;
+  @include media(">=768") {
+    padding: 50px 35px;
+  }
   span {
     text-transform: uppercase;
     @include textSecondary(400, 14px, 20px, $colorPersimmon);
