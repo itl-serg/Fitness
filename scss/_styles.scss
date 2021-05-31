@@ -111,6 +111,7 @@ body {
 }
 // End header
 // Section
+
 .section-wrapper {
   background: $backgroundAtlantis;
   .data:nth-child(odd) {
@@ -139,7 +140,6 @@ body {
   height: 100%;
   padding-bottom: 105px;
   padding-top: 168px;
-
   @include media(">=768px") {
     flex-direction: row;
     flex-wrap: wrap;
@@ -196,7 +196,6 @@ body {
     p {
       margin-bottom: 16px;
     }
-
     a {
       color: $colorWhite;
       margin-bottom: 10px;
@@ -211,7 +210,6 @@ body {
       height: 6px;
       margin-left: 4px;
     }
-
     a:hover {
       color: $colorPersimmon;
     }
@@ -225,7 +223,6 @@ body {
   @include media(">=768px") {
     flex-wrap: nowrap;
   }
-
   @include media(">=1181px") {
     width: 1181px;
   }
@@ -238,7 +235,6 @@ body {
   text-align: center;
   width: 401px;
   padding: 35px;
-
   @include media(">=768") {
     padding: 50px 35px;
   }
@@ -263,7 +259,6 @@ body {
     margin-bottom: 18px;
     display: block;
   }
-
   p {
     @include textPrimary(400, 14px, 26px, $colorNevada);
     margin-bottom: 1px;
@@ -278,7 +273,6 @@ body {
     text-decoration: none;
   }
 }
-
 .data-img {
   height: 394px;
   overflow: hidden;
@@ -310,3 +304,49 @@ body {
     order: 1;
   }
 }
+// End section
+
+// Article
+.article-wrapper {
+  background: $backgroundPersimmon;
+  .article-data {
+    // @include media(">=768") {}
+    @include media(">=1181px") {
+      display: flex;
+      width: 1181px;
+      margin: auto;
+    }
+    .article-data-left {
+      .data-content {
+        height: 309px;
+        background: $backgroundWhite;
+      }
+      // @include media(">=768") {}
+      // @include media(">=1181px") {}
+    }
+    .article-data-right {
+      // @include media(">=768") {}
+      // @include media(">=1181px") {}
+      .data-article {
+        background: $backgroundAtlantis;
+        padding: 60px 60px;
+        height: 309px;
+        h4 {
+          text-transform: uppercase;
+          @include textPrimary(300, 40px, 48px, $colorWhite);
+        }
+        p {
+          @include textPrimary(400, 13px, 21px, $colorWhite);
+        }
+      }
+    }
+  }
+}
+.article-data-img {
+  height: 330px;
+  overflow: hidden;
+  // @include media(">=768") {}
+  // @include media(">=1181px") {}
+}
+
+// End article
