@@ -15,7 +15,7 @@ body {
 // Header
 .intro {
   .img-holder {
-    // height: 890px;
+    max-height: 890px;
     overflow: hidden;
     position: relative;
     img {
@@ -31,60 +31,47 @@ body {
       left: 52px;
     }
     .header-text {
+      position: absolute;
+      bottom: 140px;
+      text-transform: uppercase;
+      span {
+        display: inline-block;
+      }
+      h1 {
+        span {
+          color: $textColorGreen;
+        }
+      }
+      p {
+        @include textSecondary(700, 15px, 24px, $textColorPrimary);
+        span {
+          color: $textColorRed;
+        }
+      }
       @include media("<768px") {
-        position: absolute;
-        bottom: 40px;
         left: 52px;
-        text-transform: uppercase;
-        em {
+        h1 {
           @include textSecondary(400, 20px, 24px, $textColorPrimary);
-          span {
-            color: $colorGren;
-          }
         }
         p {
-          @include textSecondary(700, 15px, 24px, $textColorPrimary);
-          span {
-            color: $colorRed;
-          }
           margin-left: 66px;
         }
       }
       @include media(">=768px") {
-        position: absolute;
-        bottom: 90px;
         left: 52px;
-        text-transform: uppercase;
-        em {
+        h1 {
           @include textSecondary(400, 30px, 36px, $textColorPrimary);
-          span {
-            color: $colorGren;
-          }
         }
         p {
-          @include textSecondary(700, 15px, 24px, $textColorPrimary);
-          span {
-            color: $colorRed;
-          }
           margin-left: 116px;
         }
       }
       @include media(">=991px") {
-        position: absolute;
-        bottom: 140px;
         left: 114px;
-        text-transform: uppercase;
-        em {
+        h1 {
           @include textSecondary(400, 40px, 48px, $textColorPrimary);
-          span {
-            color: $colorGren;
-          }
         }
         p {
-          @include textSecondary(700, 15px, 24px, $textColorPrimary);
-          span {
-            color: $colorRed;
-          }
           margin-left: 166px;
         }
       }
@@ -124,6 +111,9 @@ body {
           text-decoration: none;
           @include textSecondary(400, 13px, 20px, $textColorPrimary);
         }
+        a:hover {
+          color: $textColorGreen;
+        }
       }
     }
   }
@@ -131,5 +121,50 @@ body {
 // End header
 // Section
 .section-wrapper {
-  background: $colorGren;
+  background: $backgroundGreen;
+  .data {
+    display: flex;
+    .data-content {
+      width: 401px;
+      background: $backgroundWhite;
+    }
+    @include media("<768px") {
+      width: auto;
+      margin: auto;
+    }
+    @include media(">=768px") {
+      width: auto;
+      margin: auto;
+    }
+    @include media(">=991px") {
+      width: auto;
+      margin: auto;
+    }
+    @include media(">=1181px") {
+      width: 1181px;
+      margin: auto;
+    }
+  }
+  .data-img {
+    flex: 1;
+    height: 394px;
+    overflow: hidden;
+    position: relative;
+    span {
+      display: block;
+    }
+    img {
+      display: block;
+      width: auto;
+    }
+    span::after {
+      background: url(../images/logo-for-fitness-first.png) no-repeat;
+      content: "";
+      position: absolute;
+      bottom: 45px;
+      right: 42px;
+      width: 127px;
+      height: 31px;
+    }
+  }
 }
