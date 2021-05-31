@@ -10,7 +10,7 @@
   display: block;
 }
 body {
-  @include textPrimary(400, 14px, 24px, $textColor);
+  @include textPrimary(400, 14px, 24px, $colorBaliHai);
 }
 // Header
 .intro {
@@ -34,33 +34,27 @@ body {
       position: absolute;
       bottom: 140px;
       text-transform: uppercase;
+      left: 52px;
       span {
         display: inline-block;
       }
       h1 {
+        @include textSecondary(400, 20px, 24px, $colorWhite);
         span {
-          color: $textColorGreen;
+          color: $colorAtlantis;
         }
       }
       p {
-        @include textSecondary(700, 15px, 24px, $textColorPrimary);
+        @include textSecondary(700, 15px, 24px, $colorWhite);
+        margin-left: 66px;
         span {
-          color: $textColorRed;
+          color: $colorPersimmon;
         }
       }
-      @include media("<768px") {
-        left: 52px;
-        h1 {
-          @include textSecondary(400, 20px, 24px, $textColorPrimary);
-        }
-        p {
-          margin-left: 66px;
-        }
-      }
+
       @include media(">=768px") {
-        left: 52px;
         h1 {
-          @include textSecondary(400, 30px, 36px, $textColorPrimary);
+          @include textSecondary(400, 30px, 36px, $colorWhite);
         }
         p {
           margin-left: 116px;
@@ -69,7 +63,7 @@ body {
       @include media(">=991px") {
         left: 114px;
         h1 {
-          @include textSecondary(400, 40px, 48px, $textColorPrimary);
+          @include textSecondary(400, 40px, 48px, $colorWhite);
         }
         p {
           margin-left: 166px;
@@ -80,27 +74,21 @@ body {
   .header-nav {
     .header-nav-list {
       text-transform: uppercase;
-      @include media("<768px") {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        position: absolute;
-        top: 53px;
-        right: 40px;
-      }
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      position: absolute;
+      top: 53px;
+      right: 40px;
+
       @include media(">=768px") {
-        display: flex;
-        position: absolute;
-        top: 53px;
+        flex-direction: row;
         right: 40px;
         li {
           margin-left: 50px;
         }
       }
       @include media(">=991px") {
-        display: flex;
-        position: absolute;
-        top: 53px;
         right: 70px;
         li {
           margin-left: 67px;
@@ -109,10 +97,10 @@ body {
       li {
         a {
           text-decoration: none;
-          @include textSecondary(400, 13px, 20px, $textColorPrimary);
+          @include textSecondary(400, 13px, 20px, $colorWhite);
         }
         a:hover {
-          color: $textColorGreen;
+          color: $colorAtlantis;
         }
       }
     }
@@ -121,50 +109,57 @@ body {
 // End header
 // Section
 .section-wrapper {
-  background: $backgroundGreen;
-  .data {
-    display: flex;
-    .data-content {
-      width: 401px;
-      background: $backgroundWhite;
-    }
-    @include media("<768px") {
-      width: auto;
-      margin: auto;
-    }
-    @include media(">=768px") {
-      width: auto;
-      margin: auto;
-    }
-    @include media(">=991px") {
-      width: auto;
-      margin: auto;
-    }
-    @include media(">=1181px") {
-      width: 1181px;
-      margin: auto;
+  background: $backgroundAtlantis;
+}
+
+.data {
+  display: flex;
+  margin: auto;
+  flex-wrap: wrap;
+  background: $backgroundWhite;
+  @include media(">=768px") {
+    flex-wrap: nowrap;
+  }
+
+  @include media(">=1181px") {
+    width: 1181px;
+  }
+  .data-content {
+    width: 401px;
+    padding: 35px;
+    @include media(">=768") {
+      padding: 50px 35px;
     }
   }
-  .data-img {
+}
+.data-img {
+  height: 394px;
+  overflow: hidden;
+  position: relative;
+  span {
+    display: block;
+  }
+  img {
+    display: block;
+    width: auto;
+  }
+  span:after {
+    content: "";
+    position: absolute;
+    bottom: 45px;
+    height: 31px;
+  }
+  .logo-for-img-fitnes-first::after {
+    background: url(../images/logo-for-fitness-first.png) no-repeat;
+    right: 42px;
+    width: 127px;
+  }
+  .logo-for-img-your-body:after {
+    background: url(../images/logo-for-your-body.png) no-repeat;
+    left: 42px;
+    width: 145px;
+  }
+  @include media(">=768") {
     flex: 1;
-    height: 394px;
-    overflow: hidden;
-    position: relative;
-    span {
-      display: block;
-    }
-    img {
-      display: block;
-      width: auto;
-    }
-    span::after {
-      background: url(../images/logo-for-fitness-first.png) no-repeat;
-      content: "";
-      position: absolute;
-      bottom: 45px;
-      right: 42px;
-      width: 127px;
-      height: 31px;
-    }
   }
 }
