@@ -10,7 +10,7 @@
   display: block;
 }
 body {
-  @include textPrimary(400, 14px, 24px, $colorBaliHai);
+  @include textPrimary(400, 14px, 24px, $colorWhite);
 }
 // Header
 .intro {
@@ -129,7 +129,47 @@ body {
     }
   }
 }
+.data-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 120px;
+  padding-top: 140px;
 
+  @include media(">=768px") {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 768px;
+    justify-content: space-around;
+    align-items: stretch;
+    margin: auto;
+  }
+  @include media(">=1181px") {
+    align-items: center;
+    justify-content: space-between;
+    width: 1181px;
+    margin: auto;
+  }
+  div {
+    width: 265px;
+    h2 {
+      @include textPrimary(400, 24px, 32px, $colorWhite);
+      margin-bottom: 10px;
+    }
+    p {
+      margin-bottom: 10px;
+    }
+    a {
+      display: block;
+      color: $colorWhite;
+      margin-bottom: 10px;
+    }
+    a:hover {
+      color: $colorPersimmon;
+    }
+  }
+}
 .data {
   display: flex;
   margin: auto;
@@ -163,7 +203,7 @@ body {
     margin-bottom: 3px;
     display: block;
   }
-  h2 {
+  h3 {
     text-transform: uppercase;
     @include textSecondary(300, 35px, 40px, $colorAtlantis);
     letter-spacing: -2.5px;
@@ -220,6 +260,6 @@ body {
     width: 145px;
   }
   @include media(">=768") {
-    flex: 1;
+    order: 1;
   }
 }
