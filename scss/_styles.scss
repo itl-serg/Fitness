@@ -32,7 +32,7 @@ body {
     }
     .header-text {
       position: absolute;
-      bottom: 140px;
+      bottom: 40px;
       text-transform: uppercase;
       left: 52px;
       span {
@@ -55,6 +55,7 @@ body {
       }
 
       @include media(">=768px") {
+        bottom: 100px;
         h1 {
           @include textSecondary(400, 30px, 36px, $colorWhite);
         }
@@ -62,7 +63,8 @@ body {
           margin-left: 116px;
         }
       }
-      @include media(">=991px") {
+      @include media(">=1181px") {
+        bottom: 140px;
         left: 114px;
         h1 {
           @include textSecondary(400, 40px, 48px, $colorWhite);
@@ -81,7 +83,7 @@ body {
       flex-direction: column;
       align-items: flex-end;
       position: absolute;
-      top: 53px;
+      top: 54px;
       right: 40px;
 
       @include media(">=768px") {
@@ -91,7 +93,7 @@ body {
           margin-left: 50px;
         }
       }
-      @include media(">=991px") {
+      @include media(">=1181px") {
         right: 70px;
         li {
           margin-left: 67px;
@@ -139,7 +141,7 @@ body {
   flex-direction: column;
   height: 100%;
   padding-bottom: 105px;
-  padding-top: 168px;
+  padding-top: 68px;
   @include media(">=768px") {
     flex-direction: row;
     flex-wrap: wrap;
@@ -149,19 +151,23 @@ body {
     margin: auto;
   }
   @include media(">=1181px") {
-    align-items: center;
+    // align-items: center;
     justify-content: space-between;
     width: 1181px;
     margin: auto;
   }
   div {
-    display: flex;
-    flex-direction: column;
-    align-self: stretch;
-    justify-content: space-between;
-    align-items: flex-start;
     width: 278px;
     position: relative;
+    margin-top: 100px;
+
+    @include media(">=1181px") {
+      display: flex;
+      flex-direction: column;
+      align-self: stretch;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
     h2 {
       @include textPrimary(400, 24px, 32px, $colorWhite);
       margin-bottom: 20px;
@@ -195,6 +201,7 @@ body {
     }
     p {
       margin-bottom: 16px;
+      margin-right: 10px;
     }
     a {
       color: $colorWhite;
@@ -235,8 +242,12 @@ body {
   text-align: center;
   width: 401px;
   padding: 35px;
-  @include media(">=768") {
-    padding: 50px 35px;
+  @include media(">=768px") {
+    padding: 40px;
+    height: 390px;
+  }
+  @include media(">=1181px") {
+    height: 100%;
   }
   em {
     text-transform: uppercase;
@@ -287,7 +298,7 @@ body {
   span:after {
     content: "";
     position: absolute;
-    bottom: 45px;
+    bottom: 43px;
     height: 31px;
   }
   .logo-for-img-fitnes-first::after {
@@ -297,10 +308,10 @@ body {
   }
   .logo-for-img-your-body:after {
     background: url(../images/logo-for-your-body.png) no-repeat;
-    left: 42px;
+    left: 50px;
     width: 145px;
   }
-  @include media(">=768") {
+  @include media(">=768px") {
     order: 1;
   }
 }
@@ -309,44 +320,83 @@ body {
 // Article
 .article-wrapper {
   background: $backgroundPersimmon;
-  .article-data {
-    // @include media(">=768") {}
+}
+.article-main {
+  @include media(">=768px") {
+  }
+  @include media(">=1181px") {
+    display: flex;
+    width: 1181px;
+    margin: auto;
+  }
+}
+.article-main-left {
+  background: $backgroundWhite;
+  width: 100%;
+
+  @include media(">=768px") {
+    display: flex;
+  }
+  @include media(">=1181px") {
+    width: 401px;
+    flex-direction: column;
+  }
+  .main-left-img {
+    @include media(">=768px") {
+      // width: 100%;
+    }
     @include media(">=1181px") {
-      display: flex;
-      width: 1181px;
-      margin: auto;
+      height: 330px;
+      // overflow: hidden;
     }
-    .article-data-left {
-      .data-content {
-        height: 309px;
-        background: $backgroundWhite;
-      }
-      // @include media(">=768") {}
-      // @include media(">=1181px") {}
+    img {
+      display: block;
+      width: 100%;
     }
-    .article-data-right {
-      // @include media(">=768") {}
-      // @include media(">=1181px") {}
-      .data-article {
-        background: $backgroundAtlantis;
-        padding: 60px 60px;
-        height: 309px;
-        h4 {
-          text-transform: uppercase;
-          @include textPrimary(300, 40px, 48px, $colorWhite);
-        }
-        p {
-          @include textPrimary(400, 13px, 21px, $colorWhite);
-        }
-      }
+  }
+  .main-left-text {
+    background: $backgroundWhite;
+    align-items: flex-start;
+    height: 309px;
+    @include media(">=768px") {
+      height: 100%;
+      width: 100%;
+    }
+    @include media(">=1181px") {
+      height: 100%;
+      width: 401px;
+    }
+    p {
+      margin-top: 7px;
+      text-align: left;
     }
   }
 }
-.article-data-img {
-  height: 330px;
-  overflow: hidden;
-  // @include media(">=768") {}
-  // @include media(">=1181px") {}
+
+.article-main-right {
+  background: $backgroundAtlantis;
+  .main-right-img {
+    @include media(">=1181px") {
+      height: 330px;
+      overflow: hidden;
+    }
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+  .main-right-text {
+    padding: 55px 60px;
+    height: 285px;
+    h4 {
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      @include textPrimary(300, 40px, 48px, $colorWhite);
+    }
+    p {
+      @include textPrimary(400, 13px, 21px, $colorWhite);
+    }
+  }
 }
 
 // End article
