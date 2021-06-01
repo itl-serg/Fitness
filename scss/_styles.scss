@@ -237,14 +237,15 @@ body {
 .data-content {
   display: flex;
   flex-direction: column;
-  // justify-content: center;
+
   align-items: center;
   text-align: center;
-  width: 401px;
+  // width: 401px;
   padding: 35px;
   @include media(">=768px") {
-    padding: 40px;
+    padding: 38px;
     height: 390px;
+    width: 401px;
   }
   @include media(">=1181px") {
     height: 100%;
@@ -330,37 +331,40 @@ body {
     margin: auto;
   }
 }
-.article-main-left {
+.article-main-secondary {
   background: $backgroundWhite;
   width: 100%;
-
   @include media(">=768px") {
     display: flex;
+    flex-direction: row-reverse;
   }
   @include media(">=1181px") {
     width: 401px;
     flex-direction: column;
   }
-  .main-left-img {
+  .main-secondary-img {
     @include media(">=768px") {
-      // width: 100%;
+      width: 100%;
     }
     @include media(">=1181px") {
       height: 330px;
-      // overflow: hidden;
     }
     img {
       display: block;
       width: 100%;
     }
   }
-  .main-left-text {
+  .main-secondary-text {
     background: $backgroundWhite;
     align-items: flex-start;
     height: 309px;
+
+    // padding-left: 40px;
+
     @include media(">=768px") {
       height: 100%;
       width: 100%;
+      padding-bottom: 5px;
     }
     @include media(">=1181px") {
       height: 100%;
@@ -372,20 +376,38 @@ body {
     }
   }
 }
-
-.article-main-right {
+.article-main-primary {
+  position: relative;
   background: $backgroundAtlantis;
-  .main-right-img {
+  .main-primary-img {
+    position: relative;
     @include media(">=1181px") {
       height: 330px;
       overflow: hidden;
+    }
+    span:after {
+      background: url("../images/logo-health-and-fitness.png") no-repeat;
+      content: "";
+      width: 184px;
+      height: 19px;
+      position: absolute;
+      top: 60px;
+      right: 60px;
+    }
+    time {
+      position: absolute;
+      top: 60px;
+      left: 60px;
+      letter-spacing: 1.2px;
+      @include textSecondary(400, 14px, 20px, $colorWhite);
+      text-transform: uppercase;
     }
     img {
       width: 100%;
       display: block;
     }
   }
-  .main-right-text {
+  .main-primary-text {
     padding: 55px 60px;
     height: 285px;
     h4 {
@@ -395,6 +417,76 @@ body {
     }
     p {
       @include textPrimary(400, 13px, 21px, $colorWhite);
+    }
+  }
+}
+.additional-properties {
+  .article-main-primary {
+    background: $backgroundWhite;
+    .main-primary-img {
+    }
+
+    .main-text-primary {
+      position: relative;
+      padding: 51px 38px;
+      em {
+        text-transform: uppercase;
+        @include textSecondary(400, 14px, 20px, $colorPersimmon);
+      }
+      em:after {
+        background: url("../images/icons.png") no-repeat -136px -46px;
+        width: 32px;
+        height: 38px;
+        content: "";
+        position: absolute;
+        top: 56px;
+        right: 48px;
+      }
+      h3 {
+        margin-bottom: 28px;
+        text-transform: uppercase;
+        @include textPrimary(300, 35px, 40px, $colorAtlantis);
+      }
+      p {
+        @include textPrimary(400, 14px, 26px, $colorNevada);
+      }
+    }
+  }
+  .article-main-secondary {
+    background: $backgroundAtlantis;
+    .main-secondary-img {
+      min-width: 401px;
+    }
+
+    .main-text-secondary {
+      position: relative;
+      background: $backgroundAtlantis;
+      padding: 51px 38px;
+      height: 310px;
+      @include media(">=768px") {
+        height: 100%;
+      }
+      em {
+        text-transform: uppercase;
+        @include textSecondary(400, 17px, 24px, $colorWhite);
+      }
+      em:after {
+        background: url("../images/icons.png") no-repeat -140px -93px;
+        content: "";
+        width: 26px;
+        height: 38px;
+        position: absolute;
+        top: 57px;
+        right: 35px;
+      }
+      h3 {
+        margin-bottom: 28px;
+        text-transform: uppercase;
+        @include textPrimary(300, 35px, 40px, $colorWhite);
+      }
+      p {
+        @include textPrimary(400, 14px, 26px, $colorWhite);
+      }
     }
   }
 }
