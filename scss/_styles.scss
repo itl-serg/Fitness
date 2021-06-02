@@ -11,6 +11,7 @@
 }
 body {
   @include textPrimary(400, 14px, 24px, $colorWhite);
+  overflow-x: hidden;
   @include media(">=1181px") {
     min-width: 1181px;
   }
@@ -148,6 +149,8 @@ body {
   height: 100%;
   padding-bottom: 105px;
   padding-top: 3px;
+  overflow: visible;
+
   @include media(">=768px") {
     flex-direction: row;
     flex-wrap: wrap;
@@ -157,11 +160,9 @@ body {
     margin: auto;
   }
   @include media(">=1181px") {
-    // align-items: center;
     justify-content: space-between;
     width: 1181px;
-
-    // margin: auto;
+    margin: auto;
   }
   div {
     width: 278px;
@@ -207,7 +208,7 @@ body {
       left: 0;
     }
     p {
-      margin-bottom: 16px;
+      margin-bottom: 18px;
       margin-right: 10px;
     }
     a {
@@ -262,7 +263,7 @@ body {
     text-transform: uppercase;
     @include textSecondary(400, 14px, 20px, $colorPersimmon);
     letter-spacing: 1.4px;
-    margin-top: 16px;
+    margin-top: 15px;
     margin-bottom: 3px;
     display: block;
   }
