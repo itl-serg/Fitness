@@ -12,7 +12,7 @@ body {
   @include textPrimary(400, 14px, 24px, $colorWhite);
 
   @include media(">=1181px") {
-    max-width: 1181px;
+    // min-width: 1181px;
   }
 }
 // Header
@@ -26,7 +26,7 @@ body {
       width: 100%;
     }
     @include media(">=1181px") {
-      max-width: 1181px;
+      width: 100%;
     }
     .header-logo {
       background: url(../images/logo.png) no-repeat;
