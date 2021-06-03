@@ -162,9 +162,14 @@ body {
     margin: auto;
   }
   div {
-    width: 278px;
+    width: 100%;
+
     position: relative;
     margin-top: 165px;
+    @include media(">=768px") {
+      width: 278px;
+    }
+
     @include media(">=1181px") {
       display: flex;
       flex-direction: column;
@@ -247,7 +252,7 @@ body {
   @include media(">=768px") {
     padding: 38px;
     height: 390px;
-    width: 401px;
+    max-width: 401px;
   }
   @include media(">=1181px") {
     height: 100%;
@@ -354,7 +359,7 @@ body {
     flex-direction: row-reverse;
   }
   @include media(">=1181px") {
-    width: 401px;
+    max-width: 401px;
     flex-direction: column;
   }
   .main-secondary-img {
@@ -380,7 +385,7 @@ body {
     }
     @include media(">=1181px") {
       height: 100%;
-      width: 401px;
+      max-width: 401px;
     }
     p {
       margin-top: 7px;
