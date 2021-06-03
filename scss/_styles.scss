@@ -12,7 +12,7 @@ body {
   @include textPrimary(400, 14px, 24px, $colorWhite);
 
   @include media(">=1181px") {
-    min-width: 1181px;
+    max-width: 1181px;
   }
 }
 // Header
@@ -26,7 +26,7 @@ body {
       width: 100%;
     }
     @include media(">=1181px") {
-      min-width: 1181px;
+      max-width: 1181px;
     }
     .header-logo {
       background: url(../images/logo.png) no-repeat;
@@ -151,7 +151,7 @@ body {
   @include media(">=768px") {
     flex-direction: row;
     flex-wrap: wrap;
-    width: 768px;
+    max-width: 768px;
     justify-content: space-around;
     // align-items: stretch;
     margin: auto;
@@ -483,7 +483,6 @@ body {
   .article-main-secondary {
     background: $backgroundAtlantis;
     .main-secondary-img {
-      min-width: 401px;
     }
     .main-text-secondary {
       position: relative;
@@ -492,7 +491,9 @@ body {
       height: 310px;
       @include media(">=768px") {
         height: 100%;
+        max-width: 401px;
       }
+
       em {
         text-transform: uppercase;
         @include textSecondary(400, 17px, 24px, $colorWhite);
