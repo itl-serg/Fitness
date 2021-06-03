@@ -29,7 +29,7 @@ body {
       width: 100%;
     }
     .header-logo {
-      background: url(../images/logo.png) no-repeat;
+      background: url("../images/logo.png") no-repeat;
       position: absolute;
       width: 151px;
       height: 47px;
@@ -163,8 +163,8 @@ body {
   }
   div {
     width: 100%;
+    padding: 0 40px;
 
-    position: relative;
     margin-top: 165px;
     @include media(">=768px") {
       width: 278px;
@@ -176,37 +176,39 @@ body {
       align-self: stretch;
       justify-content: space-between;
       align-items: flex-start;
+      padding: 0;
     }
     h2 {
       @include textPrimary(400, 24px, 32px, $colorWhite);
       margin-bottom: 20px;
+      position: relative;
     }
     h2::before {
       content: "";
       position: absolute;
       top: -55px;
-      left: 4px;
+      background-size: cover;
+
+      width: 45px;
+      height: 45px;
     }
     h2.resources::before {
-      background: url("../images/icons.png") no-repeat -29px -4px;
-      width: 44px;
-      height: 41px;
+      background: url("../images/sprite/sprite.svg#resources") no-repeat;
+      left: 4px;
     }
     h2.training::before {
-      background: url("../images/icons.png") no-repeat -78px -9px;
-      width: 45px;
-      height: 44px;
+      background: url("../images/sprite/sprite.svg#training") no-repeat;
+      left: 2px;
+      top: -54px;
     }
     h2.connect::before {
-      background: url("../images/icons.png") no-repeat -27px -58px;
-      width: 47px;
-      height: 33px;
+      background: url("../images/sprite/sprite.svg#connect") no-repeat;
+      left: 2px;
     }
     h2.communicate::before {
-      background: url("../images/icons.png") no-repeat -80px -56px;
-      width: 44px;
-      height: 44px;
-      left: 0;
+      background: url("../images/sprite/sprite.svg#communicate") no-repeat;
+      left: -2px;
+      top: -52px;
     }
     p {
       margin-bottom: 18px;
@@ -272,11 +274,12 @@ body {
     margin-bottom: 16px;
   }
   .data-content-icon {
-    background: url("../images/icons.png") no-repeat -3px 0;
-    width: 15px;
+    background: url("../images/sprite/sprite.svg#your-body") no-repeat;
+    width: 21px;
     height: 23px;
     margin-bottom: 18px;
     display: block;
+    background-size: cover;
   }
   p {
     @include textPrimary(400, 14px, 26px, $colorNevada);
@@ -310,6 +313,7 @@ body {
     right: 78px;
     em {
       color: $colorPersimmon;
+      display: block;
     }
   }
   .logo-for-img-your-body {
@@ -319,18 +323,18 @@ body {
   }
   span:after {
     content: "";
+    background: url(../images/sprite/sprite.svg#drop) no-repeat;
     position: absolute;
     bottom: 0px;
     height: 31px;
-    width: 19px;
+    width: 28px;
+    background-size: cover;
   }
   .logo-for-img-fitnes-first::after {
-    background: url(../images/logo-for-img.png) no-repeat;
-    right: -35px;
+    right: -34px;
   }
   .logo-for-img-your-body::after {
-    background: url(../images/logo-for-img.png) no-repeat;
-    left: 128px;
+    left: 121px;
   }
   @include media(">=768px") {
     order: 1;
@@ -375,6 +379,7 @@ body {
     }
   }
   .main-secondary-text {
+    position: relative;
     background: $backgroundWhite;
     align-items: flex-start;
     height: 309px;
@@ -390,6 +395,15 @@ body {
     p {
       margin-top: 7px;
       text-align: left;
+    }
+    em:after {
+      background: url("../images/sprite/sprite.svg#lifestyle") no-repeat;
+      width: 33px;
+      height: 33px;
+      content: "";
+      position: absolute;
+      top: 56px;
+      right: 30px;
     }
   }
 }
@@ -417,13 +431,15 @@ body {
       left: 60px;
     }
     span:after {
-      background: url("../images/logo-health-and-fitness.png") no-repeat;
+      // background: url("../images/logo-health-and-fitness.png") no-repeat;
+      background: url(../images/sprite/sprite.svg#health-and-fitness) no-repeat;
       content: "";
       width: 19px;
       height: 19px;
       position: absolute;
       top: 0px;
       right: -31px;
+      background-size: cover;
     }
     time {
       position: absolute;
@@ -460,15 +476,25 @@ body {
       em {
         text-transform: uppercase;
         @include textSecondary(400, 14px, 20px, $colorPersimmon);
+        display: block;
       }
       em:after {
-        background: url("../images/icons.png") no-repeat -136px -46px;
+        background: url("../images/sprite/sprite.svg#get-involved") no-repeat;
         width: 32px;
         height: 38px;
         content: "";
         position: absolute;
-        top: 56px;
-        right: 48px;
+        top: 30px;
+        right: 30px;
+        @include media(">=992px") {
+          background: url("../images/sprite/sprite.svg#get-involved") no-repeat;
+          width: 32px;
+          height: 38px;
+          content: "";
+          position: absolute;
+          top: 56px;
+          right: 48px;
+        }
       }
       h3 {
         margin-bottom: 28px;
@@ -497,15 +523,17 @@ body {
       em {
         text-transform: uppercase;
         @include textSecondary(400, 17px, 24px, $colorWhite);
+        display: block;
+        margin-bottom: -2px;
       }
       em:after {
-        background: url("../images/icons.png") no-repeat -140px -93px;
+        background: url("../images/sprite/sprite.svg#eating-habits") no-repeat;
         content: "";
-        width: 26px;
-        height: 38px;
+        width: 40px;
+        height: 40px;
         position: absolute;
         top: 57px;
-        right: 35px;
+        right: 29px;
       }
       h3 {
         margin-bottom: 28px;
